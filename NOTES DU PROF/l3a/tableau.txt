@@ -1,0 +1,205 @@
+========= Séance du 07/02/2025 ==========
+Les chaines de caractères
+String VS StringBuilder VS StringBuffer
+Les expressions régulières
+Passage d'arguments en ligne de commande
+========= Séance du 24/01/2025 ==========
+Les tableaux
+	Déclaration, création et indexation
+	Les tableaux multidimensionnels
+La boucle ForEach
+Les méthodes à ellipse
+TP 4 (tableaux) à préparer pour la prochaine séance
+Next: Page 134
+========= Séance du 17/01/2025 ==========
+Copie d'objets
+	==> Copie superficielle
+	==> Copie profonde
+Bloc static
+Surcharge de méthodes
+Passage de paramètres et de valeur de retour
+Autoréférencement avec this
+Notion d'objet membre
+Next : Page 127
+===================
+Implémentation
+	Tout ce qui a trait au mécanisme de fonctionnement interne de la classe
+Interface
+	Ensemble des services offerts par la classe
+	Ce par le biais duquel on intéragit avec la classe
+Getters & setters
+Comparaison d'objets
+	Comparaison référencielle (se fait avec l'opérateur ==)
+		Pour vérifier si deux références désignent le même objet
+	Comparaison structurelle (se fait avec la méthode equals)
+		Pour vérifier si deux références désignent des objets identiques
+====================
+int a;
+Bulle b;
+b.couleur = "JAUNE"; // erreur
+
+Bulle b = new Bulle();
+b.couleur = "JAUNE"; // OK
+
+Signature d'une méthode : nom et les paramètres d'une méthode
+
+boolean deplacer(float x, float y) ==> deplacer(float, float)
+void changerCouleur(String newColor) ==> changerCouleur(String)
+Bulle(String color, float x, float y) ==> Bulle(String, float, float)
+Bulle() {} ==> Bulle()
+
+La construction d'un objet se fait en trois étapes :
+Etape 1 : Initialisation implicite des attributs
+Etape 2 : Initialisation explicite des attributs
+	concerne uniquement les attributs qui aurait été explicitement initialisés
+Etape 3 : Appel du constructeur
+Page 110
+====================
+
+n * x + p
+(float) n * x + p
+nx + p
+nx + (float) p
+
+byte b = 12;
+
+byte c = b + 1; 
+byte c = (int) b + 1 ;
+float f = (double) 2.5;
+
+E1 & E2 & E3
+
+F & V & F
+F & F
+F
+
+F && V && F
+F
+
+E1 & E2 & E3
+
+c = 2
+2 + 3 + 5
+
+if (2 > 3 && (c > (k = 2))) {}
+
+if (f() & g()) {}
+
+2 & 3
+
+k = c = 2
+
+int a = 5, b = 2;
+double c = (double) a / b;
+
+double d = 2.5;
+float f = (float) d;
+
+int i = 129;
+byte b = i; // erreur
+byte b = (byte) i;
+
+
+11010110 10110110 11001101 11010110 
+
+	00000101 = 5
+	00000100 = 4
+ 	========
+|	00000101 = 5
+&	00000100 = 4
+^	00000001 = 1
+
+Next: Page 58
+
+Classe
+	Attributs (Etat)
+		=> caractéristiques structurelles
+			Ensemble des informations qu'on devrait avoir sur les objets de la classe
+		=> Informations à retenir sur chaque objet de la classe
+		=> Informations qui vous nous être utile sur chaque objet de la classe
+
+		Ensemble des valeurs des attributs d'un objet détermine son état
+	Méthodes (comportement)
+		==> caractéristiques comportementales
+				Ensemble des opérations que les objets de la classe doivent être en mesure de faire
+
+Bulle
+	Attributs
+		couleur (I)
+		forme (C)
+		taille (C)
+		abscisse (I)
+		ordonnee (I)
+	Méthodes
+		seDeplacer() [I]
+		changerCouleur() [I]
+
+
+Deux types d'attributs
+	Attribut d'instance
+		Attribut dont la valeur peut changer d'un objet à un autre
+			Sa valeur est spécifique à chaque objet
+	Attribut de classe
+		Attribut dont la valeur est commune à tous les objets
+		Tous les objets se le partage
+
+Deux types de méthodes
+	Méthode d'instance
+		Manipule au moins un attribut d'instance
+	Méthode de classe
+		Ne manipule aucun attribut d'instance
+			==> manipule uniquement des attributs de classe
+			==> ne manipule aucun attribut de la classe
+
+
+La généralisation
+
+ChaiseEnbois ---|
+				|---> Chaise
+ChaiseEnFer	----|
+
+
+La spécialisation
+
+				|----------> Etudiant
+Personne -------|
+				|----------> Enseignant
+
+Point
+	Attributs
+		x, y
+	Méthodes
+		deplacer()
+		distance(Point p)
+
+PointColore
+	Attributs
+		x, y, couleur
+	Méthodes
+		deplacer()
+		distance(Point p)
+		changerCouleur(String couleur)
+
+Référence : désignation de l'objet
+
+Implémentation d'une classe en Java
+
+1. Description de la classe
+
+Bulle
+	Attributs
+		couleur 	: CHAINE (I)
+		forme  		: CHAINE (C)
+		taille 		: ENTIER (C)
+		abscisse 	: REEL (I)
+		ordonnee 	: REEL (I)
+	Méthodes
+		booléen deplacer(x, y) [I]
+		void changerCouleur(newColor) [I]
+		void augmenterTaille(int facteur) [C]
+
+2. Implémentation de la classe
+
+Instanciation d'une classe
+	=> Processus par lequel on crée un objet à partir de sa classe
+	=> Se fait par le biais de l'opérateur "new" de Java
